@@ -13,7 +13,7 @@ class CIFAR10Pair(CIFAR10):
         img, target = self.data[index], self.targets[index]
         img = Image.fromarray(img)
 
-        #####################################
+        
         self.class_idxs = dict()  # Construct a dictionary of lists of indices for each class.
         targets1 = np.unique(self.targets)
         for target1 in targets1:
@@ -26,7 +26,7 @@ class CIFAR10Pair(CIFAR10):
         paired_img = Image.fromarray(paired_img)
 
 
-        #############################################
+        
         if self.transform is not None:
             pos_1 = self.transform(img)
             pos_2 = self.transform(paired_img)
